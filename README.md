@@ -4,7 +4,20 @@ Text
 
 # GPC Formulation
 
-Text
+The QP problem solved at each sample to obtain the optimal control sequence and apply the first increment to the system is shown below:
+
+$$
+\begin{aligned}
+\min \quad & \sum_{j=N_1}^{N_2} \gamma(w(k+j) - \hat{y}(k+j))^2 +  \sum_{i=1}^{4}  \sum_{j=0}^{N_u-1}  \lambda_i(\Delta u_i(k+j))^2\\
+\textrm{s.a.} \quad & 0 \leq \sum^{j}_{i=0} \Delta u_1(k+i) + u_1(k-1) \leq 1\\
+\quad & 0 \leq \sum^{j}\_{i=0} \Delta u_2(k+i) + u_2(k-1) \leq 1\\
+\quad & 0 \leq \sum^{j}\_{i=0} \Delta u_3(k+i) + u_3(k-1) \leq 1\\
+\quad & 0 \leq \sum^{j}\_{i=0} \Delta u_4(k+i) + u_4(k-1) \leq 1\\
+\end{aligned}
+$$
+
+which is the classical formulation for the GPC controller. As that is, there is no incentive for the controller to avoid using the more expansive inputs except for the $\lambda_i$ values.
+
 
 # SRGPC Formulation
 
@@ -20,7 +33,7 @@ $$
 \end{aligned}
 $$
 
-Additional constraints beyond equation (\ref{restricoes}) could also be added, like limits on the control increments or limits on the output variable.
+Additional constraints could also be added, like limits on the control increments or limits on the output variable.
 
 
 # Additional Results

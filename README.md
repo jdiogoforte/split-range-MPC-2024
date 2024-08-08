@@ -2,15 +2,29 @@
 
 Text
 
-# Additional Results
-
-Text
-
 # GPC Formulation
 
 Text
 
 # SRGPC Formulation
+
+The MIQP problem solved at each sample to obtain the optimal control sequence and apply the first increment to the system is shown below:
+
+$$
+\begin{aligned}
+\min \quad & \sum_{j=N_1}^{N_2} \gamma(w(k+j) - \hat{y}(k+j))^2 +  \sum_{i=1}^{4}  \sum_{j=0}^{N_u-1}  \lambda_i(\Delta u_i(k+j))^2 \\\
+\textrm{s.a.} \quad & 0 \leq \sum^{j}_{i=0} \Delta u_1(k+i) + u_1(k-1) \leq 1 - \delta_1(k+j)\\\
+1 - \delta_1(k+j) \leq \sum^{j}_{i=0} \Delta u_2(k+i) + u_2(k-1) \leq 1 - \delta_2(k+j)\\\
+\sigma_3(k+j) \leq \sum^{j}_{i=0} \Delta u_3(k+i) + u_3(k-1) \leq \delta_2(k+j)\\\
+0 \leq \sum^{j}_{i=0} \Delta u_4(k+i) + u_4(k-1) \leq \sigma_3(k+j)\\\
+\forall j \in \left[0, N_u -1\right]\\\
+\end{aligned}
+$$
+
+ Additional constraints beyond equation (\ref{restricoes}) could also be added, like limits on the control increments or limits on the output variable.
+
+
+# Additional Results
 
 Text
 

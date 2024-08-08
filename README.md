@@ -39,27 +39,21 @@ onde cada $\Delta U_i$ é, ele próprio, um vetor contendo os incrementos de con
    $$ A_{nq} X \leq b_{nq},$$
 
 sendo: 
+
 $$
     A_{nq} = \begin{bmatrix}
-T & 0 & 0 & 0 & 0 \\
--T & 0 & 0 & I & 0 \\
-0 & T & 0 & -I & 0 \\
-0 & -T & 0 & 0 & I \\
-0 & 0 & T & 0 & -I \\
-0 & 0 & -T & 0 & 0 \\
+T & 0 & 0 & 0 & 0 \\\
+-T & 0 & 0 & I & 0 \\\
+0 & T & 0 & -I & 0 \\\
+0 & -T & 0 & 0 & I \\\
+0 & 0 & T & 0 & -I \\\
+0 & 0 & -T & 0 & 0 \\\
 \end{bmatrix}, 
 $$
+
 onde $T$ é um bloco triangular inferior unitária de dimensão $N_u \times N_u$, e: 
-$$
-    b_{nq} = \begin{bmatrix}
-(1-u_1(k-1)) U \\
-u_1(k-1) U \\
--u_2(k-1) U  \\
-u_2(k-1) U  \\
--u_3(k-1) U  \\
-u_3(k-1) U  \\
-\end{bmatrix}, 
-$$
+$$    b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\\ u_1(k-1) U \\\ -u_2(k-1) U  \\\ u_2(k-1) U  \\\ -u_3(k-1) U  \\\ u_3(k-1) U  \\\ \end{bmatrix},$$
+
 onde $U$ é um vetor preenchido de uns com comprimento $N_u$.
 
 Adicionalmente, a função objetivo será escrita como:

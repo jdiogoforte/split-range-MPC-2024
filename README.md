@@ -8,6 +8,7 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 # Exemplo
 
 Para demonstrar o uso da formulação proposta com sequenciamento dos atuadores, análogo a um controle split-range, simulou-se um processo com a seguinte dinâmica:
+
 $$    Y(z^{-1}) = \dfrac{z^{-1}}{1-0.5z^{-1}} \left( 0.2 U_1(z^{-1}) + 0.15 U_2(z^{-1}) +0.15 U_3(z^{-1}) \right)$$
 
 onde $Y(z^{-1})$ é a variável de processo e $U_i(z^{-1})$ é a i-ézima variável manipulada, sendo que estas últimas já estão ordenadas da mais barata para a mais cara, sendo $z^{-1}$ o operador de atraso discreto e a planta estando amostrada com um período $T_s = 0.1$ segundos.
@@ -23,13 +24,14 @@ Adicionalmente, para as estratégias 1, 4 e 5 testou-se um cenário com o MPC si
 
 
 Para montar o MIQP, as variáveis de decisão são empilhadas em um vetor:
+
 $$   X = \left[
 \begin{array}{c}
-\Delta U_1 \\
-\Delta U_2 \\
-\Delta U_3 \\
-\delta_1 \\
-\delta_2 \\
+\Delta U_1 \\\
+\Delta U_2 \\\
+\Delta U_3 \\\
+\delta_1 \\\
+\delta_2 \\\
 \end{array}
 \right],$$
 
@@ -58,30 +60,36 @@ $$    b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\\ u_1(k-1) U \\\ -u_2(k-1) U  \\
 onde $U$ é um vetor preenchido de uns com comprimento $N_u$.
 
 Adicionalmente, a função objetivo será escrita como:
+
 $$
     J = \dfrac{1}{2} X^T H_o X + q_o^T X,
 $$
+
 onde:
+
 $$
    H_o = \begin{bmatrix}
-2(G^T Q_\gamma G + Q_\lambda) & 0 \\
+2(G^T Q_\gamma G + Q_\lambda) & 0 \\\
 0 & 0
 \end{bmatrix}, 
 $$
+
 sendo $Q_\gamma$ a matriz diagonal com a ponderação no erro quadrático e $Q_\lambda$ a matriz diagonal contendo as ponderações para o esforço de controle de cada entrada, também com os $0$ de dimensões apropriadas para o número de variáveis binárias de $X$ e:
+
 $$
    q_o = \begin{bmatrix}
-(2(f-W)^T Q_\gamma G)^T \\ 0
+(2(f-W)^T Q_\gamma G)^T \\\ 0
 \end{bmatrix}, 
 $$
+
 com o $0$ de dimensão apropriada para o número de variáveis binárias nas linhas finais de $X$.
 
 Assim, o problema a ser resolvido a cada instante de tempo para calcular o incremento de controle ótimo a ser aplicado ao processo é:
 
 $$
 \begin{aligned}
-\min \quad & \dfrac{1}{2} X^T H_o X + q_o^T X\\
-\textrm{s.a.} \quad & A_{nq} X \leq b_{nq}\\
+\min \quad & \dfrac{1}{2} X^T H_o X + q_o^T X\\\
+\textrm{s.a.} \quad & A_{nq} X \leq b_{nq}\\\
 \end{aligned}
 $$
 

@@ -2,6 +2,8 @@
 
 Text
 
+
+
 # GPC Formulation
 
 The QP problem solved at each sample to obtain the optimal control sequence and apply the first increment to the system is shown below:
@@ -38,7 +40,11 @@ Additional constraints could also be added, like limits on the control increment
 
 # Additional Results
 
-Text
+Response for the GSRC:
+![A test image](GSRC.png)
+
+
+
 
 # Additional Exemple
 

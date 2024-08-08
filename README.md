@@ -52,6 +52,7 @@ T & 0 & 0 & 0 & 0 \\\
 $$
 
 onde $T$ é um bloco triangular inferior unitária de dimensão $N_u \times N_u$, e: 
+
 $$    b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\\ u_1(k-1) U \\\ -u_2(k-1) U  \\\ u_2(k-1) U  \\\ -u_3(k-1) U  \\\ u_3(k-1) U  \\\ \end{bmatrix},$$
 
 onde $U$ é um vetor preenchido de uns com comprimento $N_u$.

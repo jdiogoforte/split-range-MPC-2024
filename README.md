@@ -1,46 +1,55 @@
-# split-range-MPC-2024
-Supplementary material for the paper "A model predictive control interpretation of the generalized split-range control"
+# Supplementary material for the paper "A model predictive control interpretation of the generalized split-range control"
 
-This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
+Text
 
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+# Additional Results
 
-# Exemplo
+Text
 
-Para demonstrar o uso da formulação proposta com sequenciamento dos atuadores, análogo a um controle split-range, simulou-se um processo com a seguinte dinâmica:
+# GPC Formulation
+
+Text
+
+# SRGPC Formulation
+
+Text
+
+# Additional Exemple
+
+To demonstrate the use of the proposed formulation with actuator sequencing, analogous to a split-range control, a process with the following dynamics was simulated:
 
 $$    Y(z^{-1}) = \dfrac{z^{-1}}{1-0.5z^{-1}} \left( 0.2 U_1(z^{-1}) + 0.15 U_2(z^{-1}) +0.15 U_3(z^{-1}) \right)$$
 
-onde $Y(z^{-1})$ é a variável de processo e $U_i(z^{-1})$ é a i-ézima variável manipulada, sendo que estas últimas já estão ordenadas da mais barata para a mais cara, sendo $z^{-1}$ o operador de atraso discreto e a planta estando amostrada com um período $T_s = 0.1$ segundos.
+where $Y(z^{-1})$ is the process variable and $U_i(z^{-1})$ is the i-th manipulated variable, with the latter already ordered from cheapest to most expensive, $z^{-1}$ being the discrete delay operator and the plant being sampled with a period of $T_s = 0.1$ seconds.
 
-Para comparar o desempenho das cinco estratégias para solução do MIQP apresentadas, foram realizados três experimentos diferentes, variando o tamanho dos horizontes e, portanto, o número de variáveis de decisão:
-    \item MPC sintonizado com $N_1 = 1$, $N_2 = 3$, $N_u = 3$, $\gamma = 4$ e $\lambda = 1$, totalizando 9 variáveis de decisão contínuas e 6 binárias;
-    \item MPC sintonizado com $N_1 = 1$, $N_2 = 10$, $N_u = 5$, $\gamma = 4$ e $\lambda = 2$, totalizando 15 variáveis de decisão contínuas e 10 binárias;
-    \item MPC sintonizado com $N_1 = 1$, $N_2 = 20$, $N_u = 10$, $\gamma = 4$ e $\lambda = 4$, totalizando 30 variáveis de decisão contínuas e 20 binárias.
-
-
-Adicionalmente, para as estratégias 1, 4 e 5 testou-se um cenário com o MPC sintonizado com $N_1 = 1$, $N_2 = 40$, $N_u = 20$, $\gamma = 4$ e $\lambda = 8$, totalizando 60 variáveis de decisão contínuas e 40 binárias.
+To compare the performance of the five MIQP solution strategies presented, three different experiments were carried out, varying the size of the horizons and therefore the number of decision variables:
+    \item MPC tuned with $N_1 = 1$, $N_2 = 3$, $N_u = 3$, $\gamma = 4$ and $\lambda = 1$, totaling 9 continuous and 6 binary decision variables;
+    \item MPC tuned with $N_1 = 1$, $N_2 = 10$, $N_u = 5$, $\gamma = 4$ and $\lambda = 2$, for a total of 15 continuous and 10 binary decision variables;
+    \item MPC tuned with $N_1 = 1$, $N_2 = 20$, $N_u = 10$, $\gamma = 4$ and $\lambda = 4$, totaling 30 continuous and 20 binary decision variables.
 
 
+Additionally, for strategies 1, 4 and 5, a scenario was tested with the MPC tuned to $N_1 = 1$, $N_2 = 40$, $N_u = 20$, $\gamma = 4$ and $\lambda = 8$, totaling 60 continuous and 40 binary decision variables.
 
-Para montar o MIQP, as variáveis de decisão são empilhadas em um vetor:
 
-$$   X = \left[
+
+To assemble the MIQP, the decision variables are stacked in a vector:
+
+$$ X = \left[
 \begin{array}{c}
 \Delta U_1 \\\
 \Delta U_2 \\\
 \Delta U_3 \\\
-\delta_1 \\\
-\delta_2 \\\
+\delta_1 \\
+\delta_2 \\
 \end{array}
 \right],$$
 
-onde cada $\Delta U_i$ é, ele próprio, um vetor contendo os incrementos de controle no horizonte $\Delta u_i(k), ..., \Delta u_i (k+N_u-1)$, sendo $N_u$ o tamanho do horizonte de controle, e $\delta_i$  é um vetor contendo as variáveis binárias no horizonte $\delta_i(k), ..., \delta_i (k+N_u-1)$, pode-se escrever as restrições do MIQP no formato:
+where each $\Delta U_i$ is itself a vector containing the control increments at horizon $\Delta u_i(k), ... , \Delta u_i (k+N_u-1)$, where $N_u$ is the size of the control horizon, and $\delta_i$ is a vector containing the binary variables in the horizon $\delta_i(k), ..., \delta_i (k+N_u-1)$, you can write the MIQP constraints in the form:
 
 
    $$ A_{nq} X \leq b_{nq},$$
 
-sendo: 
+where: 
 
 $$
     A_{nq} = \begin{bmatrix}
@@ -53,19 +62,19 @@ T & 0 & 0 & 0 & 0 \\\
 \end{bmatrix}, 
 $$
 
-onde $T$ é um bloco triangular inferior unitária de dimensão $N_u \times N_u$, e: 
+where $T$ is a unit lower triangular block of dimension $N_u \times N_u$, and: 
 
-$$    b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\\ u_1(k-1) U \\\ -u_2(k-1) U  \\\ u_2(k-1) U  \\\ -u_3(k-1) U  \\\ u_3(k-1) U  \\\ \end{bmatrix},$$
+$$ b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\ u_1(k-1) U \\ -u_2(k-1) U \\ u_2(k-1) U \\ -u_3(k-1) U \\ u_3(k-1) U \\end{bmatrix},$$
 
-onde $U$ é um vetor preenchido de uns com comprimento $N_u$.
+where $U$ is a vector filled with ones of length $N_u$.
 
-Adicionalmente, a função objetivo será escrita como:
+Additionally, the objective function will be written as:
 
 $$
     J = \dfrac{1}{2} X^T H_o X + q_o^T X,
 $$
 
-onde:
+where:
 
 $$
    H_o = \begin{bmatrix}
@@ -74,7 +83,7 @@ $$
 \end{bmatrix}, 
 $$
 
-sendo $Q_\gamma$ a matriz diagonal com a ponderação no erro quadrático e $Q_\lambda$ a matriz diagonal contendo as ponderações para o esforço de controle de cada entrada, também com os $0$ de dimensões apropriadas para o número de variáveis binárias de $X$ e:
+where $Q_\gamma$ is the diagonal matrix with the weighting in the quadratic error and $Q_\lambda$ is the diagonal matrix containing the weightings for the control effort of each input, also with the $0$ of appropriate dimensions for the number of binary variables of $X$ and:
 
 $$
    q_o = \begin{bmatrix}
@@ -82,14 +91,16 @@ $$
 \end{bmatrix}, 
 $$
 
-com o $0$ de dimensão apropriada para o número de variáveis binárias nas linhas finais de $X$.
+with the $0$ dimension appropriate for the number of binary variables in the final lines of $X$.
 
-Assim, o problema a ser resolvido a cada instante de tempo para calcular o incremento de controle ótimo a ser aplicado ao processo é:
+Thus, the problem to be solved at each instant of time to calculate the optimal control increment to be applied to the process is:
 
 $$
 \begin{aligned}
-\min \quad & \dfrac{1}{2} X^T H_o X + q_o^T X\\\
-\textrm{s.a.} \quad & A_{nq} X \leq b_{nq}\\\
+\min \quad & \dfrac{1}{2} X^T H_o X + q_o^T X\\
+\textrm{s.a.} \quad & A_{nq} X \leq b_{nq}\\
 \end{aligned}
 $$
+
+Translated with DeepL.com (free version)
 

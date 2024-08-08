@@ -41,9 +41,20 @@ Additional constraints could also be added, like limits on the control increment
 # Additional Results
 
 Response for the GSRC:
+
 ![A test image](GSRC.png)
 
+Response for the GPC:
 
+![A test image](respGPC.png)
+
+Response for the SRGPC:
+
+![A test image](respSRGPC.png)
+
+Response for the SRGPC+FF:
+
+![A test image](respSRGPCFF.png)
 
 
 # Additional Exemple

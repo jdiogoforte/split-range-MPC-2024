@@ -22,17 +22,7 @@ $$    Y(z^{-1}) = \dfrac{z^{-1}}{1-0.5z^{-1}} \left( 0.2 U_1(z^{-1}) + 0.15 U_2(
 
 where $Y(z^{-1})$ is the process variable and $U_i(z^{-1})$ is the i-th manipulated variable, with the latter already ordered from cheapest to most expensive, $z^{-1}$ being the discrete delay operator and the plant being sampled with a period of $T_s = 0.1$ seconds.
 
-To compare the performance of the five MIQP solution strategies presented, three different experiments were carried out, varying the size of the horizons and therefore the number of decision variables:
-    \item MPC tuned with $N_1 = 1$, $N_2 = 3$, $N_u = 3$, $\gamma = 4$ and $\lambda = 1$, totaling 9 continuous and 6 binary decision variables;
-    \item MPC tuned with $N_1 = 1$, $N_2 = 10$, $N_u = 5$, $\gamma = 4$ and $\lambda = 2$, for a total of 15 continuous and 10 binary decision variables;
-    \item MPC tuned with $N_1 = 1$, $N_2 = 20$, $N_u = 10$, $\gamma = 4$ and $\lambda = 4$, totaling 30 continuous and 20 binary decision variables.
-
-
-Additionally, for strategies 1, 4 and 5, a scenario was tested with the MPC tuned to $N_1 = 1$, $N_2 = 40$, $N_u = 20$, $\gamma = 4$ and $\lambda = 8$, totaling 60 continuous and 40 binary decision variables.
-
-
-
-To assemble the MIQP, the decision variables are stacked in a vector:
+To assemble the MIQP problem, the decision variables are stacked in a vector:
 
 $$ X = \left[
 \begin{array}{c}
@@ -102,5 +92,5 @@ $$
 \end{aligned}
 $$
 
-Translated with DeepL.com (free version)
+
 

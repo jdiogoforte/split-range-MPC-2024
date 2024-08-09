@@ -1,8 +1,8 @@
 # Supplementary material for the paper "A model predictive control interpretation of the generalized split-range control"
 
-Text
+The following supplementary material accompanies the paper titled "A Model Predictive Control Interpretation of the Generalized Split-Range Control," authored by José Diogo Forte de Oliveira Luna, Rafael Oliveira Pedrisch, João Victor Bezerra da Silva, José Souto Guimarães Ferreira Júnior, Carlos Henrique Azevedo Guimarães, Kariston Dias Alves, and Julio Elias Normey-Rico.
 
-
+This material includes a detailed formulation of the Generalized Predictive Control (GPC) used for comparison, as well as an expanded formulation of the Split-Range Generalized Predictive Control (SRGPC), which is presented in a shorter manner in the paper. Additionally, the time response curves for both the GPC and SRGPC with feedforward action are also provided, as these were omitted from the main document due to page limitations. An additional example of the formulation is also included, with particular emphasis on the matrix representation of the Mixed-Integer Quadratic Programming (MIQP) problem.
 
 # GPC Formulation
 

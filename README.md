@@ -15,11 +15,13 @@ $$
 \quad & 0 \leq \sum^{j}\_{i=0} \Delta u_2(k+i) + u_2(k-1) \leq 1\\
 \quad & 0 \leq \sum^{j}\_{i=0} \Delta u_3(k+i) + u_3(k-1) \leq 1\\
 \quad & 0 \leq \sum^{j}\_{i=0} \Delta u_4(k+i) + u_4(k-1) \leq 1\\
+\quad & \forall j \in [0 , N_u-1]$
 \end{aligned}
 $$
 
 which is the classical formulation for the GPC controller. As that is, there is no incentive for the controller to avoid using the more expansive inputs except for the $\lambda_i$ values.
 
+$N_1$ and $N_2$ are the limits of the prediction horizon, $N_u$ is the size of the control horizon, $w(k+j)$ is the reference trajectory, $\hat{y}(k+j)$ is the predicted output, $\Delta u_i$ is is the control increment for the i-th input and $\gamma$ and $\lambda_i$ are the weights for the error and control effort terms of the cost function. This objective function can be understood as a trade-off between eliminating the error quickly and having a smooth control action. If $\gamma$ is increased the importance of the error term becomes greater and the controller will use the inputs more aggressively to curb the error down. Conversely, if the $\lambda_i$ values are increased, the controller will use the inputs more parsimoniously, leading to smoother control effort but longer lasting error.
 
 # SRGPC Formulation
 
@@ -32,6 +34,7 @@ $$
 \quad & 1 - \delta_1(k+j) \leq \sum^{j}\_{i=0} \Delta u_2(k+i) + u_2(k-1) \leq 1 - \delta_2(k+j)\\
 \quad & \sigma_3(k+j) \leq \sum^{j}\_{i=0} \Delta u_3(k+i) + u_3(k-1) \leq \delta_2(k+j)\\
 \quad & 0 \leq \sum^{j}\_{i=0} \Delta u_4(k+i) + u_4(k-1) \leq \sigma_3(k+j)\\
+\quad & \forall j \in [0 , N_u-1]$
 \end{aligned}
 $$
 

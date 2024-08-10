@@ -105,7 +105,7 @@ $$
 
 where $T$ is a unit lower triangular block of dimension $N_u \times N_u$, and: 
 
-$$ b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\\ u_1(k-1) U \\\ -u_2(k-1) U \\\ u_2(k-1) U \\\ -u_3(k-1) U \\\ u_3(k-1) U \\\end{bmatrix},$$
+$$ b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\\ u_1(k-1) U \\\ -u_2(k-1) U \\\ u_2(k-1) U \\\ -u_3(k-1) U \\\ u_3(k-1) U \\ \end{bmatrix},$$
 
 where $U$ is a vector filled with ones of length $N_u$.
 

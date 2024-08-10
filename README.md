@@ -43,26 +43,25 @@ Additional constraints could also be added, like limits on the control increment
 
 # Additional Results
 
-
-<div style="text-align: center; margin-bottom: 20px;">
-  <p>Response for the GSRC</p>
+<h1 align="center">
+     <p>Response for the GSRC</p>
   <img src="./images/GSRC.png" alt="Texto Alternativo" width="300" height="300">
-</div>
+</h1>
 
-<div style="text-align: center; margin-bottom: 20px;">
-  <p>Response for the GPC</p>
+<h1 align="center">
+     <p>Response for the GPC</p>
   <img src="./images/respGPC.png" alt="Texto Alternativo" width="300" height="300">
-</div>
+</h1>
 
-<div style="text-align: center; margin-bottom: 20px;">
-  <p>Response for the SRGPC</p>
+<h1 align="center">
+      <p>Response for the SRGPC</p>
   <img src="./images/respSRGPC.png" alt="Texto Alternativo" width="300" height="300">
-</div>
+</h1>
 
-<div style="text-align: center; margin-bottom: 20px;">
-  <p>Response for the SRGPC+FF</p>
+<h1 align="center">
+ <p>Response for the SRGPC+FF</p>
   <img src="./images/respSRGPCFF.png" alt="Texto Alternativo" width="300" height="300">
-</div>
+</h1>
 
 
 # Additional Exemple

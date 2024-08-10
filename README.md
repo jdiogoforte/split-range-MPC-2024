@@ -45,19 +45,19 @@ Additional constraints could also be added, like limits on the control increment
 
 Response for the GSRC:
 
-![A test image](GSRC.png)
+![A test image](./images/GSRC.png)
 
 Response for the GPC:
 
-![A test image](respGPC.png)
+![A test image](./images/respGPC.png)
 
 Response for the SRGPC:
 
-![A test image](respSRGPC.png)
+![A test image](./images/respSRGPC.png)
 
 Response for the SRGPC+FF:
 
-![A test image](respSRGPCFF.png)
+![A test image](./images/respSRGPCFF.png)
 
 
 # Additional Exemple

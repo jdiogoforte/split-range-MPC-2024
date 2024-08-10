@@ -15,7 +15,7 @@ $$
 \quad & 0 \leq \sum^{j}\_{i=0} \Delta u_2(k+i) + u_2(k-1) \leq 1\\
 \quad & 0 \leq \sum^{j}\_{i=0} \Delta u_3(k+i) + u_3(k-1) \leq 1\\
 \quad & 0 \leq \sum^{j}\_{i=0} \Delta u_4(k+i) + u_4(k-1) \leq 1\\
-\quad & \forall j \in [0 , N_u-1]$
+\quad & \forall j \in [0 , N_u-1]
 \end{aligned}
 $$
 
@@ -34,7 +34,7 @@ $$
 \quad & 1 - \delta_1(k+j) \leq \sum^{j}\_{i=0} \Delta u_2(k+i) + u_2(k-1) \leq 1 - \delta_2(k+j)\\
 \quad & \sigma_3(k+j) \leq \sum^{j}\_{i=0} \Delta u_3(k+i) + u_3(k-1) \leq \delta_2(k+j)\\
 \quad & 0 \leq \sum^{j}\_{i=0} \Delta u_4(k+i) + u_4(k-1) \leq \sigma_3(k+j)\\
-\quad & \forall j \in [0 , N_u-1]$
+\quad & \forall j \in [0 , N_u-1]
 \end{aligned}
 $$
 
@@ -46,22 +46,22 @@ Additional constraints could also be added, like limits on the control increment
 
 <div style="text-align: center; margin-bottom: 20px;">
   <p>Response for the GSRC</p>
-  <img src="./images/GSRC.png" alt="Texto Alternativo" width="300" height="200">
+  <img src="./images/GSRC.png" alt="Texto Alternativo" width="300" height="300">
 </div>
 
 <div style="text-align: center; margin-bottom: 20px;">
   <p>Response for the GPC</p>
-  <img src="./images/respGPC.png" alt="Texto Alternativo" width="300" height="200">
+  <img src="./images/respGPC.png" alt="Texto Alternativo" width="300" height="300">
 </div>
 
 <div style="text-align: center; margin-bottom: 20px;">
   <p>Response for the SRGPC</p>
-  <img src="./images/respSRGPC.png" alt="Texto Alternativo" width="300" height="200">
+  <img src="./images/respSRGPC.png" alt="Texto Alternativo" width="300" height="300">
 </div>
 
 <div style="text-align: center; margin-bottom: 20px;">
   <p>Response for the SRGPC+FF</p>
-  <img src="./images/respSRGPCFF.png" alt="Texto Alternativo" width="300" height="200">
+  <img src="./images/respSRGPCFF.png" alt="Texto Alternativo" width="300" height="300">
 </div>
 
 
@@ -105,7 +105,7 @@ $$
 
 where $T$ is a unit lower triangular block of dimension $N_u \times N_u$, and: 
 
-$$ b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\ u_1(k-1) U \\ -u_2(k-1) U \\ u_2(k-1) U \\ -u_3(k-1) U \\ u_3(k-1) U \\end{bmatrix},$$
+$$ b_{nq} = \begin{bmatrix} (1-u_1(k-1)) U \\\ u_1(k-1) U \\\ -u_2(k-1) U \\\ u_2(k-1) U \\\ -u_3(k-1) U \\\ u_3(k-1) U \\\end{bmatrix},$$
 
 where $U$ is a vector filled with ones of length $N_u$.
 
